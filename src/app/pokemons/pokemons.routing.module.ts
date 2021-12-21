@@ -25,4 +25,4 @@ const pokemonsRoutes: Routes = [
 
 })
 
-export class pokemonsModules{};
+export class PokemonsModule{}

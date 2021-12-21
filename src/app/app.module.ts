@@ -17,9 +17,10 @@ import { PokemonsModule } from './pokemons/pokemons.modules';
   imports: [
     BrowserModule,
     FormsModule,
-    AppRoutingModule //Le routin toujours en dernier
+    PokemonsModule,
+    AppRoutingModule //Le routing toujours en dernier
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class PokemonsRoutingModule { }
