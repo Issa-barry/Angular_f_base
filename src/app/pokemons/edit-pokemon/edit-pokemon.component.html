@@ -1,0 +1,14 @@
+<h2 class="header center">Edit <em>{{pokemon?.name}}</em> </h2>
+<p  class="header center">Point de vie <strong>{{ pokemon.hp}}</strong></p>
+<p  class="header center">Degat <strong>{{ pokemon.cp}}</strong></p>
+
+<p class="center">
+  <img *ngIf="pokemon" [src]="pokemon.picture" alt="">
+</p>
+
+
+
+<div class="form">
+
+<form-pokemon [pokemon]='pokemon'></form-pokemon>
+</div>
