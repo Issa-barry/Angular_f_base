@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../donnees-pokemons/pokemon';
-import { PokemonService } from '../pokemon.service';
+import { PokemonsService } from '../pokemons.service';
 import { Router } from '@angular/router';
-
 
 
 @Component({
@@ -13,12 +12,13 @@ export class PokemonComponent implements OnInit{
 
     pokemons: Pokemon[];
 
-    constructor(private router: Router, private pokemonsService: PokemonService){
+    constructor(private router: Router, private pokemonsService : PokemonsService){
         this.pokemons = [];
     }
 
     ngOnInit(): void{
-      this.pokemons = this.pokemonsService.getPokemons();
+      this.pokemonsService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
+      
     }
 
     selectPokemon(pokemon : Pokemon){

@@ -1,28 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { Pokemon } from '../donnees-pokemons/pokemon';
-import { POKEMONS } from '../donnees-pokemons/mock-pokemons';
+import { PokemonsService } from '../pokemons.service';
 // Importation du router pour les liens
 import { ActivatedRoute, Router } from '@angular/router';
-import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'detail-pokemon',
   templateUrl: './detail-pokemon.component.html'
 })
 export class DetailPokemonComponent implements OnInit{
-
-  pokemons: Pokemon[];
+  
   pokemon: any = null;
 
-  constructor(private route : ActivatedRoute, private router: Router,
-              private pokemonsService: PokemonService)
-  {
-    this.pokemons = [];
+  constructor(private route : ActivatedRoute, private router: Router, private pokemonsService : PokemonsService){
+  
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     let id = this.route.snapshot.params['id'];
-    this.pokemon = this.pokemonsService.getPokemon(id);
+    this.pokemonsService.getPokemon(id).subscribe(pokemon => this.pokemon = pokemon);
   }
 
 
@@ -34,5 +30,6 @@ export class DetailPokemonComponent implements OnInit{
     let link = ['pokemon/edit', pokemon.id];
     this.router.navigate(link);
   }
+  
 
 }

@@ -1,58 +1,61 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { PokemonService } from "../pokemon.service";
-
+import { PokemonsService } from "../pokemons.service";
 @Component({
   selector: 'form-pokemon',
   templateUrl: './form-pokemon.component.html'
 })
-
 export class FormPokemonComponent implements OnInit{
-  @Input() pokemon: any;
+
+  @Input() pokemon : any;
   types: any = [];
 
-     constructor(private route: ActivatedRoute, private router: Router, private pokemonsService: PokemonService){}
+  constructor(private route : ActivatedRoute, private router: Router,  private pokemonsService : PokemonsService){
 
-     ngOnInit(): void {
-         this.types = this.pokemonsService.getPokemonType();
-     }
+  }
 
-     //Déterminer si le type passé en paramettre existe
-     hasType(type:string): boolean{
-        let index = this.pokemon.types.indexOf(type);
-        if (index >-1) return true;
+  ngOnInit(): void {
+      this.types = this.pokemonsService.getPokemonTypes();
+  }
 
-        return false;
-     }
+  //Détermine si le type passé en paramètre appartient ou non au pokémon
+  hasType(type: string) :boolean{
+    let index = this.pokemon.types.indexOf(type);
+    if(index > -1) return true;
 
-    //  Methode appelée lorsque l'utilisateur ajoute ou retir un type au pokemon
-    selectType($event: any, type: string ): void{
-     let checked = $event.target.checked;
+    return false;
+  }
 
-     if(checked){
-       this.pokemon.types.push(type);
-     }else{
-       let index = this.pokemon.types.indexOf(type)//on recupere l'index
-       if(index > -1){
-         this.pokemon.types.splice(index, 1) //le "splice" permet d'enlever l'ancien elt dans le tableau
-       }
-     }
+  // Méthode appelée lorque l'utilisateur ajout ou retire un type au pokemon
+  selectType($event: any, type: string): void{
+    let checked = $event.target.checked;
+    if(checked){
+      this.pokemon.types.push(type);
+    }else{
+      let index = this.pokemon.types.indexOf(type);
+      if(index > -1){
+        this.pokemon.types.splice(index, 1);
+      }
     }
-
-    //Verication si le type est valide
-    isTypesValid(type: string): boolean{
-       if(this.pokemon.types.length === 1 && this.hasType(type)){
-         return false;
-       }
-       if(this.pokemon.types.length >= 3 && !this.hasType(type))
-       {
-         return false;
-       }
-       return true;
+  }
+  // Valide le nombre de types pour chaque pokemon
+  isTypesValid(type :string): boolean{
+    if( this.pokemon.types.length === 1 && this.hasType(type)){
+      return false;
     }
+    if( this.pokemon.types.length >= 3 && !this.hasType(type)){
+      return false;
+    }
+    return true;
+  }
 
-     onSubmit(): void{
-        let link = ['/pokemon/', this.pokemon.id];
-        this.router.navigate(link);
-     }
+  goBack(): void{
+    let link = ['/pokemon', this.pokemon.id];
+    this.router.navigate(link);
+  }
+  
+  onSubmit(): void{
+    let link = ['/pokemon', this.pokemon.id];
+    this.router.navigate(link);
+  }
 }
