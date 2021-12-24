@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
-.form
-{
 
 
-
+.pokemon-etoile p{
+  font-size: 40px;
+  font-weight: 900;
+  text-align: justify;
+  color: orange;
+  letter-spacing: 15px;
+  line-height: 42px;
 }

@@ -63,6 +63,9 @@ export class PokemonsService{
     return ['Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik', 'Poison', 'Fée', 'Vol'];
   }
 
+  getPokemonRarete(): string[]{
+    return ['1', '2', '3', '4'];
+  }
 
 
 }

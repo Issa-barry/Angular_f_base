@@ -4,6 +4,7 @@ import { CommonModule } from "@angular/common";
 import { PokemonComponent } from './list-pokemons/pokemons.component';
 import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.component';
 import { PokemonTypeColorPipe } from './pipes/pokemon-type-color.pipe';
+import { PokemonRareteEtoilePipe } from "./pipes/pokemon-rarete-etoile.pipe";
 import { BorderCardDirective  } from './directives/border-card.directive';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
 import { FormPokemonComponent } from './edit-pokemon/form-pokemon.component';
@@ -22,6 +23,7 @@ import { BrowserModule } from '@angular/platform-browser';
     DetailPokemonComponent,
     PokemonComponent,
     PokemonTypeColorPipe,
+    PokemonRareteEtoilePipe,
     BorderCardDirective,
     EditPokemonComponent,
     FormPokemonComponent,

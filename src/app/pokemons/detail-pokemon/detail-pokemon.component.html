@@ -28,6 +28,14 @@
                   </td>
                 </tr>
                 <tr>
+                  <td>Rarete</td>
+                  <td>
+
+
+                    <div class="pokemon-etoile">  <span *ngFor="let rarete of pokemon.raretes"  ><p>{{ rarete | pokemonRareteEtoile }}</p></span></div>
+                  </td>
+                </tr>
+                <tr>
                   <td>Date de création</td>
                   <td><em>{{ pokemon.created | date: "dd/MM/yyyy" }}</em></td>
                 </tr>
