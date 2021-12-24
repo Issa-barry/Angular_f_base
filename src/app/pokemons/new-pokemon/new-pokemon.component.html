@@ -1,0 +1,57 @@
+<strong><p class="center">Create your new-pokemon!</p></strong>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="pokemonForm" >
+  <div class="row">
+    <div class="col s8 offset-s2">
+      <div class="card-panel">
+
+        <!-- Pokemon name -->
+        <div class="form-group">
+          <label for="name">Nom</label>
+          <input type="text" class="form-control" id="name" formControlName="name">
+          <div *ngIf="pokemonForm.controls['name'].invalid && (pokemonForm.controls['name'].dirty || pokemonForm.controls['name'].touched)"
+               class="card-panel red accent-1">
+             <p>Le nom du pokémon est requis (1-25).</p>
+          </div>
+        </div>
+
+      <!-- Pokemon Point de vie -->
+      <div class="form-group">
+        <label for="hp">Point de vie</label>
+        <input type="number" class="form-control" id="hp" formControlName="hp">
+        <div *ngIf="pokemonForm.controls['hp'].invalid && (pokemonForm.controls['hp'].dirty || pokemonForm.controls['hp'].touched)"
+             class="card-panel red accent-1">
+           <p>Les points de vie du pokémon sont compris entre 0 et 999..</p>
+        </div>
+      </div>
+
+      <!-- Pokemon Degat -->
+      <div class="form-group">
+        <label for="cp">Dégâts</label>
+        <input type="number" class="form-control" id="cp" formControlName="cp">
+        <div *ngIf="pokemonForm.controls['cp'].invalid && (pokemonForm.controls['cp'].dirty || pokemonForm.controls['cp'].touched)"
+             class="card-panel red accent-1">
+           <p>Les points de vie du pokémon sont compris entre 0 et 999..</p>
+        </div>
+      </div>
+
+      <div class="input-field col s12">
+        <select>
+          <option value="" disabled selected>Choose your option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+        <label>Materialize Select</label>
+      </div>
+
+        <!-- Submit button -->
+        <div class="form-row">
+          <button type="submit" [disabled]="!pokemonForm.valid"  class="waves-effect waves-light btn">Create</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</form>
+

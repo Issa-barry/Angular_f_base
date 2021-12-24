@@ -33,7 +33,7 @@ export class PokemonsService{
   //Retourne tous les pokémons
   getPokemons(): Observable<Pokemon[]>{
     return this.http.get<Pokemon[]>(this.pokemonsUrl).pipe(
-      tap(_ => this.log(`fetched pokemons`)),
+      tap(_=> this.log(`fetched pokemons`)),
       catchError(this.handleError(`getPokemons`, []))
     );
   }
