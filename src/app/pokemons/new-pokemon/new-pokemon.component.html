@@ -35,8 +35,15 @@
         </div>
       </div>
 
-
-
+    <!-- Pokemon Rerete -->
+    <div class="form-group">
+      <label for="raretes">Rerete</label>
+      <input type="number" class="form-control" id="raretes" formControlName="raretes">
+      <div *ngIf="pokemonForm.controls['raretes'].invalid && (pokemonForm.controls['raretes'].dirty || pokemonForm.controls['raretes'].touched)"
+          class="card-panel red accent-1">
+        <p>La rarete d'un pokémon doiut être compris entre 0 et 999..</p>
+      </div>
+    </div>
 
 
        <!-- Pokemon Type -->

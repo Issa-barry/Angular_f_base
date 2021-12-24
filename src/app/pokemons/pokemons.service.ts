@@ -40,13 +40,25 @@ export class PokemonsService{
 
   //Retoune le pokémon avec l'identifiant passé en paramètre
   getPokemon(id: number): Observable<Pokemon>{
-    const url = `${this.pokemonsUrl}/${id}`;
 
-    return this.http.get<Pokemon>(url).pipe(
-      tap(_ => this.log(`fetched pokemon id = ${id}`)),
+    return this.http.get<Pokemon>(`${this.pokemonsUrl}/${id}`).pipe(
+      tap(_ => this.log(`fetched pokemon id = ${this.pokemonsUrl}/${id}`)),
       catchError(this.handleError<Pokemon>(`getPokemon id=${id}`))
     );
   }
+
+  //Add Pokemon
+  createPokemon(pokemon: Object): Observable<Object> {
+    return this.http.post(`${this.pokemonsUrl}`, pokemon);
+  }
+  //Delete Pokemon
+  deletePokemon(id: number): Observable<any> {
+    return this.http.delete(`${this.pokemonsUrl}/${id}`, { responseType: 'text' });
+  }
+  //Update pokemon
+  // updatePokemon(id: number, value: any): Observable<Object> {
+  //   return this.http.put(`${this.pokemonsUrl}/${id}`, value);
+  // }
 
   updatePokemon(pokemon: Pokemon):Observable <Pokemon>{
     const httpOptions = {
@@ -63,8 +75,8 @@ export class PokemonsService{
     return ['Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik', 'Poison', 'Fée', 'Vol'];
   }
 
-  getPokemonRarete(): string[]{
-    return ['1', '2', '3', '4'];
+  getPokemonRarete(): number[]{
+    return [1, 2, 3, 4];
   }
 
 

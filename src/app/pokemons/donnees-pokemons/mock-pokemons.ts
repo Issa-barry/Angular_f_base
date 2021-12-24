@@ -6,7 +6,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Bulbizarre",
         hp: 25,
         cp: 5,
-        raretes: [1],
+        raretes: 1,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
         types: ["Plante", "Poison"],
         created: new Date()
@@ -16,7 +16,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Salamèche",
         hp: 28,
         cp: 6,
-        raretes: [3],
+        raretes:3,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/004.png",
         types: ["Feu"],
         created: new Date()
@@ -26,7 +26,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Carapuce",
         hp: 21,
         cp: 4,
-        raretes: [5],
+        raretes: 5,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/007.png",
         types: ["Eau"],
         created: new Date()
@@ -36,7 +36,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Aspicot",
         hp: 16,
         cp: 2,
-        raretes: [4],
+        raretes: 4,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/013.png",
         types: ["Insecte", "Poison"],
         created: new Date()
@@ -46,7 +46,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Roucool",
         hp: 30,
         cp: 7,
-        raretes: [2],
+        raretes:2,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/016.png",
         types: ["Normal", "Vol"],
         created: new Date()
@@ -56,7 +56,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Rattata",
         hp: 18,
         cp: 6,
-        raretes: [1],
+        raretes:1,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/019.png",
         types: ["Normal"],
         created: new Date()
@@ -66,7 +66,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Piafabec",
         hp: 14,
         cp: 5,
-        raretes: [3],
+        raretes:3,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/021.png",
         types: ["Normal", "Vol"],
         created: new Date()
@@ -76,7 +76,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Abo",
         hp: 16,
         cp: 4,
-        raretes: [5],
+        raretes:5,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/023.png",
         types: ["Poison"],
         created: new Date()
@@ -86,7 +86,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Pikachu",
         hp: 21,
         cp: 7,
-        raretes: [3],
+        raretes:3,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/025.png",
         types: ["Electrik"],
         created: new Date()
@@ -96,7 +96,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Sabelette",
         hp: 19,
         cp: 3,
-        raretes: [2],
+        raretes: 2,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/027.png",
         types: ["Normal"],
         created: new Date()
@@ -106,7 +106,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Mélofée",
         hp: 25,
         cp: 5,
-        raretes: [4],
+        raretes: 4,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/035.png",
         types: ["Fée"],
         created: new Date()
@@ -116,7 +116,7 @@ export const POKEMONS: Pokemon[] = [
         name: "Groupix",
         hp: 17,
         cp: 8,
-        raretes: [1],
+        raretes: 1,
         picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/037.png",
         types: ["Feu"],
         created: new Date()

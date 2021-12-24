@@ -12,6 +12,7 @@ export class FormPokemonComponent implements OnInit{
   @Input() pokemon : any;
   types: any = [];
   pokemons: Pokemon[];
+  pokemonToEdit: any;
 
   constructor(private route : ActivatedRoute, private router: Router,  private pokemonsService : PokemonsService){
     this.pokemons = [];
@@ -19,8 +20,8 @@ export class FormPokemonComponent implements OnInit{
 
   ngOnInit(): void {
     this.types = this.pokemonsService.getPokemonTypes();
-    this.pokemonsService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
-}
+    this.pokemonsService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);//Pour recuperer les images
+  }
   //Détermine si le type passé en paramètre appartient ou non au pokémon
   hasType(type: string) :boolean{
     let index = this.pokemon.types.indexOf(type);
@@ -58,6 +59,8 @@ export class FormPokemonComponent implements OnInit{
   }
 
   onSubmit(): void{
+     this.pokemonToEdit =     this.pokemonsService.updatePokemon(this.pokemon).subscribe(pokemon => this.pokemon = pokemon);
+
     let link = ['/pokemon', this.pokemon.id];
     this.router.navigate(link);
   }

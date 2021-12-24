@@ -32,7 +32,7 @@
                   <td>
 
 
-                    <div class="pokemon-etoile">  <span *ngFor="let rarete of pokemon.raretes"  ><p>{{ rarete | pokemonRareteEtoile }}</p></span></div>
+                    <div class="pokemon-etoile">  <span><p>{{ pokemon.raretes | pokemonRareteEtoile }}</p></span></div>
                   </td>
                 </tr>
                 <tr>
@@ -46,6 +46,8 @@
           <div class="card-action">
             <a (click)="goBack()" class="waves-effect waves-light btn">Retour</a>
             <a (click)="goEdit(pokemon)" class="waves-effect waves-light btn">Éditer</a>
+            <a (click)="deletePokemon(pokemon.id)" class="waves-effect waves-light btn">Remove</a>
+
           </div>
 
         </div>

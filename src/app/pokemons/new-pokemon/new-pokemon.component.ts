@@ -14,7 +14,6 @@ export class NewPokemonComponent implements OnInit {
   //Variables
   @Input() pokemon : any;
   types: any = [];
-  raretes: any = [];
   pokemons: Pokemon[];
   pokemonsData: any;
   pokemonForm: FormGroup;
@@ -26,9 +25,10 @@ export class NewPokemonComponent implements OnInit {
     this.pokemons = [];
     this.pokemonForm = this.fb.group({
       name: ['', [Validators.required, Validators.maxLength(25), Validators.minLength(2)]],
-      hp: ['', [Validators.required, Validators.pattern("^[0-9]{1,3}$")] ],
-      cp: ['', [Validators.required, Validators.pattern("^[0-9]{1,2}$")] ],
-      website: this.fb.array([], [Validators.required]),
+      hp:   ['', [Validators.required, Validators.pattern("^[0-9]{1,3}$")] ],
+      cp:   ['', [Validators.required, Validators.pattern("^[0-9]{1,2}$")] ],
+      raretes:   ['', [Validators.required, Validators.pattern("^[0-5]{1}$")] ],
+      website: this.fb.array([]),
       choixImage: this.fb.array([], [Validators.required]),
 
     });
@@ -38,7 +38,6 @@ export class NewPokemonComponent implements OnInit {
     this.types = this.pokemonsService.getPokemonTypes();
     this.pokemonsService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
     this.pokemonsData = POKEMONS;
-
 }
 //Getters
 get name(){
@@ -52,9 +51,15 @@ get points(){
 get degat(){
   return this.pokemonForm.get('cp');
 }
+
+get raretes(){
+  return this.pokemonForm.get('raretes');
+}
+
 get website(){
   return this.pokemonForm.get('website')
 }
+
 //Traitement du formulaire
   // Méthode appelée lorque l'utilisateur ajout ou retire un type au pokemon
   selectType($event: any, type: string): void{
@@ -97,6 +102,12 @@ get website(){
 
   }
 
+  // Supression
+  // createPokemon(pk: Object): any {
+
+  //             return this.router.navigate(['/']);
+  //       }
+
   //OnSubmit methode
   onSubmit(): void {
       // console.log(this.pokemonForm.value.name);
@@ -108,40 +119,22 @@ get website(){
            let typeData;
 
            pokemonToAdd.id = this.pokemonsData.length+1;
-           pokemonToAdd.name = this.name?.value;
            pokemonToAdd.hp = this.points?.value;
            pokemonToAdd.cp = this.degat?.value;
+           pokemonToAdd.raretes = this.degat?.value;
+           pokemonToAdd.name = this.name?.value;
            //Ajout du type
-
            for(let i =1; i< this.website?.value.length; i++)
            {
             pokemonToAdd.types.push(this.website?.value[i])
            }
 
-
            //On Ajoute les données dans pokemonData
            this.pokemonsData.push(pokemonToAdd);
-           this.pokemonsData.splice(1, 1,this.website?.value[0]);
-           console.log(this.pokemonsData);
+
+           this.pokemonsService.createPokemon(this.pokemonsData).subscribe(pokemon => this.pokemon = pokemon);
+
           this.router.navigate(['/']);
      }
-
   }
-
-  /*********************************************************************************
-   * onCheckboxChange(e: any) {
-    const website: FormArray = this.pokemonForm.get('website') as FormArray;this.website as FormArray;
-
-    if (e.target.checked) {
-      website.push(new FormControl(e.target.value));
-
-    }else {
-      const index = website.controls.findIndex(x => x.value === e.target.value);
-      website.removeAt(index);
-   }
-
-   console.log(this.website);
-
-  }
-   */
 }
