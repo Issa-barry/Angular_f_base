@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { PokemonsService } from "../pokemons.service";
+import { Pokemon } from '../donnees-pokemons/pokemon';
+
 @Component({
   selector: 'form-pokemon',
   templateUrl: './form-pokemon.component.html'
@@ -9,15 +11,16 @@ export class FormPokemonComponent implements OnInit{
 
   @Input() pokemon : any;
   types: any = [];
+  pokemons: Pokemon[];
 
   constructor(private route : ActivatedRoute, private router: Router,  private pokemonsService : PokemonsService){
-
+    this.pokemons = [];
   }
 
   ngOnInit(): void {
-      this.types = this.pokemonsService.getPokemonTypes();
-  }
-
+    this.types = this.pokemonsService.getPokemonTypes();
+    this.pokemonsService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
+}
   //Détermine si le type passé en paramètre appartient ou non au pokémon
   hasType(type: string) :boolean{
     let index = this.pokemon.types.indexOf(type);
@@ -53,7 +56,7 @@ export class FormPokemonComponent implements OnInit{
     let link = ['/pokemon', this.pokemon.id];
     this.router.navigate(link);
   }
-  
+
   onSubmit(): void{
     let link = ['/pokemon', this.pokemon.id];
     this.router.navigate(link);
