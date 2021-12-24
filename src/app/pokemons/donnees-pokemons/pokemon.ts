@@ -5,7 +5,7 @@ export class Pokemon {
   name: string;
   picture: string;
   types: Array<string>;
-  raretes: Array<string>;
+  raretes: Array<number>;
   created: Date;
 
   constructor() {
@@ -16,7 +16,7 @@ export class Pokemon {
     this.picture =
       'https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png';
       this.types = ['plante'];
-      this.raretes = ['1'];
+      this.raretes = [1];
     this.created = new Date();
   }
 }
