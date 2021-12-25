@@ -1,0 +1,16 @@
+  <br/>
+<div class="container">
+  <div class="md-form center">
+    <input type="search" [(ngModel)]="searchText" placeholder="Search text" (input)="getValue($event)">
+  </div>
+
+  <div *ngIf="this.term">
+    <ul *ngFor="let pokemon of pokemons | filter: searchText">
+      <li (click)="selectPokemon(pokemon)" class="searchLink">{{pokemon.name}}</li>
+    </ul>
+  </div>
+
+
+</div>
+
+

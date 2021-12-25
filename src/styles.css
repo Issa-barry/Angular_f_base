@@ -9,3 +9,9 @@
   letter-spacing: 15px;
   line-height: 42px;
 }
+
+.searchLink:hover{
+  color: rgb(7, 30, 129);
+  font-weight: 700;
+  cursor: pointer;
+}

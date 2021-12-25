@@ -15,6 +15,8 @@ import { LoaderComponent } from "../loader.component";
 import { NewPokemonComponent } from "./new-pokemon/new-pokemon.component";
 
 import { BrowserModule } from '@angular/platform-browser';
+import { SearchPokemonComponent } from './search-pokemon/search-pokemon.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 
@@ -28,8 +30,10 @@ import { BrowserModule } from '@angular/platform-browser';
     EditPokemonComponent,
     FormPokemonComponent,
     NewPokemonComponent,
+    SearchPokemonComponent,
+    LoaderComponent,
+    FilterPipe,
 
-    LoaderComponent
 
   ],
   imports: [
