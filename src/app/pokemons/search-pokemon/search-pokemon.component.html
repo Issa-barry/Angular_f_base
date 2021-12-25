@@ -1,16 +1,12 @@
   <br/>
 <div class="container">
-  <div class="md-form center">
+  <div class="form-group">
+    <label for="search">Cherchez votre Pokémon favorie ici !</label>
     <input type="search" [(ngModel)]="searchText" placeholder="Search text" (input)="getValue($event)">
+    <div *ngIf="this.term">
+      <ul *ngFor="let pokemon of pokemons | filter: searchText">
+        <li (click)="selectPokemon(pokemon)" class="searchLink">{{pokemon.name}}</li>
+      </ul>
+    </div>
   </div>
-
-  <div *ngIf="this.term">
-    <ul *ngFor="let pokemon of pokemons | filter: searchText">
-      <li (click)="selectPokemon(pokemon)" class="searchLink">{{pokemon.name}}</li>
-    </ul>
-  </div>
-
-
 </div>
-
-
