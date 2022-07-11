@@ -7,12 +7,12 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test":"ng test",
-    "ci:test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
-    "i": "npm install"
+    "ci:test": "ng test --watch=false --browsers=ChromeHeadlessCustom",
+    "ci:build": "npm run build"
   },
   "private": true,
   "dependencies": {

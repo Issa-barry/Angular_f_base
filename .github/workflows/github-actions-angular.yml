@@ -30,22 +30,22 @@ jobs:
           node-version: '16.x'
 
       - name: Installation des dépendences
-        run: npm i
+        run: npm install
           
       # - name: Run Unit Tests
       #   run: npm run ci:test
 
-      - name: Run codacy-coverage-reporter
-        uses: codacy/codacy-coverage-reporter-action@master
-        with:
-          project-token: ${{ secrets.CODACY_CODE_COVERAGE_TOKEN }}
-          coverage-reports: coverage/lcov.info
+      # - name: Run codacy-coverage-reporter
+      #   uses: codacy/codacy-coverage-reporter-action@master
+      #   with:
+      #     project-token: ${{ secrets.CODACY_CODE_COVERAGE_TOKEN }}
+      #     coverage-reports: coverage/lcov.info
       
 #       # - name: Clean Distribution Directory
 #       #   run: npm run ci:clean
         
-#       # - name: Build Application
-#       #   run: npm run ci:build
+      # - name: Build Application
+      #   run: npm run ci:build
       
 #       # - name: List Files in Distribution Directory
 #       #   run: ls -R ./dist
