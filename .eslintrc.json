@@ -23,17 +23,17 @@
           "error",
           {
             "type": "attribute",
-            "prefix": "app",
+            "prefix": [true, "pkmnBorderCard", "attribute", "app", "camelCase"],
             "style": "camelCase"
-          }
+           }
         ],
         "@angular-eslint/component-selector": [
           "error",
           {
             "type": "element",
-            "prefix": "app",
+            "prefix": [true, "pkmnBorderCard", "element", "app", "kebab-case"],
             "style": "kebab-case"
-          }
+           }
         ]
       }
     },

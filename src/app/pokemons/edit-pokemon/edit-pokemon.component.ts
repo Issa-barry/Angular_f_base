@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from "@angular/router";
 
 
 @Component({
-  selector: 'edit-pokemon',
+  selector: 'app-edit-pokemon',
   templateUrl: './edit-pokemon.component.html'
 })
 export class EditPokemonComponent implements OnInit{

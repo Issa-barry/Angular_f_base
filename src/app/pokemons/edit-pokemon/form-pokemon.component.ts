@@ -4,7 +4,7 @@ import { PokemonsService } from "../pokemons.service";
 import { Pokemon } from '../donnees-pokemons/pokemon';
 
 @Component({
-  selector: 'form-pokemon',
+  selector: 'app-form-pokemon',
   templateUrl: './form-pokemon.component.html'
 })
 export class FormPokemonComponent implements OnInit{

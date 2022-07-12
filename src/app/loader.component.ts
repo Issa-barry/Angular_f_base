@@ -2,7 +2,7 @@ import { ResourceLoader } from "@angular/compiler";
 import { Component } from "@angular/core";
 
 @Component({
-  selector:'pkm-loader',
+  selector:'app-pkm-loader',
   templateUrl: './loader.component.html'
 })
 

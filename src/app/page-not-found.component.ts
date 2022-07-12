@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'page-404',
+  selector: 'app-page-404',
   template: `
     <div class='center'>
       <img src="https://assets.pokemon.com/assets/cms2/img/pokedex/detail/035.png">

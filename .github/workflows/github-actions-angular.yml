@@ -35,6 +35,9 @@ jobs:
       # - name: Run Unit Tests
       #   run: npm run ci:test
 
+      # - name: Run Lint Tests
+      #   run: npm run lint
+
       # - name: Run codacy-coverage-reporter
       #   uses: codacy/codacy-coverage-reporter-action@master
       #   with:
