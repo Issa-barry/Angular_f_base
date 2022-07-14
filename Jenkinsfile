@@ -1,18 +1,10 @@
 pipeline {
-    agent any
+    agent { dockerfile true }
     stages {
-        stage('Build') {
-            agent {
-                any {
-                    image 'node'
-                    // Run the container on the node specified at the
-                    // top-level of the Pipeline, in the same workspace,
-                    // rather than on a new node entirely:
-                    reuseNode true
-                }
-            }
+        stage('Test') {
             steps {
-                sh 'npm install'
+            sh 'node --version'
+            sh 'svn --version'
             }
         }
     }
