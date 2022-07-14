@@ -4,13 +4,12 @@ pipeline {
     stages {
         stage('Cleanup') {
             steps {
-                cleanWs()
+                echo 'Cleaning..'
             }
         }
         stage('Init') {
             steps {
-                sh 'make'
-                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
+                echo 'Initializing..'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
