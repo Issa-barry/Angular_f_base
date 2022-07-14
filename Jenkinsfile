@@ -1,13 +1,13 @@
 pipeline {
-  agent any
-
-  tools {nodejs "nodejs"}
-
-  stages { 
-    stage('Example') {
-      steps {
-        sh 'npm config ls'
-      }
+    agent any
+    tools {
+        nodejs 'node 7'
     }
-  }
+    stages {
+        stage('Example') {
+            steps {
+                bat 'npm --version'
+            }
+        }
+    }
 }
