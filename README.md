@@ -1,4 +1,4 @@
-# test5 Jenkinsfile simple pipline
+# test5 Jenkinsfile simple  pipline
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
