@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Init first') {
             steps {
-                echo 'Initializing..'
+                sh 'npm install'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
