@@ -1,36 +1,11 @@
 pipeline {
     agent {
-        any {
-            image 'node'
-            args '-p 30000:30000'
-        }
+        docker { image 'node:16.13.1-alpine' }
     }
-
     stages {
-        stage('Init first') {
-            steps {
-                sh 'npm install'
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
-            }
-        }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Build') {
-            steps {
-                echo 'Building..'
-            }
-        }
-        stage('Publish') {
-            steps {
-                echo 'Publishing..'
-            }
-        }
-        stage('Cleanup') {
-            steps {
-                echo 'Cleaning..'
+                sh 'node --version'
             }
         }
     }
