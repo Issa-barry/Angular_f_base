@@ -1,18 +1,32 @@
 pipeline {
     agent any
+
     stages {
-        stage('Test') {
+        stage('Init') {
             steps {
-                sh 'make check'
+                echo 'Initializing..'
+                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
-    }
-    post {
-        always {
-            junit '**/target/*.xml'
+        stage('Test') {
+            steps {
+                echo 'Testing..'
+            }
         }
-        failure {
-            mail to: team@example.com, subject: 'The Pipeline failed :('
+        stage('Build') {
+            steps {
+                echo 'Building..'
+            }
+        }
+        stage('Publish') {
+            steps {
+                echo 'Publishing..'
+            }
+        }
+        stage('Cleanup') {
+            steps {
+                echo 'Cleaning..'
+            }
         }
     }
 }
