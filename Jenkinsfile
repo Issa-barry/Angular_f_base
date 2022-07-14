@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent (label 'Build, Test & Deploy')
 
     stages {
         stage('Init') {
@@ -18,14 +18,9 @@ pipeline {
                 echo 'Building..'
             }
         }
-        stage('Publish') {
+        stage('Deploy') {
             steps {
                 echo 'Publishing..'
-            }
-        }
-        stage('Cleanup') {
-            steps {
-                echo 'Cleaning..'
             }
         }
     }
