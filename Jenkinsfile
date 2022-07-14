@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Init') {
             steps {
-                sh 'make check'
+                sh 'npm install'
                 // echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
