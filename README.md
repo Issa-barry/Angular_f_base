@@ -1,4 +1,4 @@
-# test5 Jenkinsfile simple  pipline
+# Angular, e2e (Cypress), test-unitaire, Jenkins
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
