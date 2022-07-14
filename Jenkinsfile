@@ -1,7 +1,12 @@
 pipeline {
-    agent {label "Build, Test & Deploy"}
+    agent any
 
     stages {
+        stage('Cleanup') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Init') {
             steps {
                 echo 'Initializing..'
