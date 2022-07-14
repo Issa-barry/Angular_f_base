@@ -1,5 +1,10 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'node'
+            args '-p 30000:30000'
+        }
+    }
 
     stages {
         stage('Init first') {
