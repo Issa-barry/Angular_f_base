@@ -3,7 +3,7 @@ pipeline {
 
   tools {nodejs "nodejs"}
 
-  stages {
+  stages { 
     stage('Example') {
       steps {
         sh 'npm config ls'
