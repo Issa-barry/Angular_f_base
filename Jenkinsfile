@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent { label 'nodejs8' }
 
     stages {
         stage('Cleanup') {
@@ -9,7 +9,6 @@ pipeline {
         }
         stage('Init') {
             steps {
-                sh 'npm install'
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
