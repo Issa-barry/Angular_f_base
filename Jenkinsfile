@@ -10,6 +10,7 @@ pipeline {
         stage('Init') {
             steps {
                 sh 'make'
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true
                 echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
