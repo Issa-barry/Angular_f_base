@@ -10,7 +10,7 @@ pipeline {
         stage('Init') {
             steps {
                 echo 'Initializing..'
-                echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
+                // echo "Running ${env.BUILD_ID} on ${env.JENKINS_URL}"
             }
         }
         stage('Test') {
