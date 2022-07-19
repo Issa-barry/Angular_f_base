@@ -3,10 +3,10 @@ pipeline {
         docker { image 'node' }
            }
     stages {
-        stage('Test') {
+        stage('Install') {
             steps {
             sh 'node --version'
-            sh 'svn --version'
+            sh 'npm install'
             }
         }
     }
